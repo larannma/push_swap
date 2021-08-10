@@ -89,3 +89,21 @@ void	check_argument(t_main_struct *main_struct, char **argv, int argc, int i)
 	if (!check_max_min_int(main_struct, argc - 1))
 		ft_error("The number is too big");
 }
+
+int	sorted_or_not(t_main_struct *main_struct)
+{
+	int	i;
+
+	i = 0;
+	while (i < main_struct->size - 1)
+	{
+		if (main_struct->mas[i] < main_struct->mas[i + 1])
+		{
+			printf("number i: %lld || number j: %lld\n", main_struct->mas[i], main_struct->mas[i + 1]);
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (1);
+}

@@ -26,7 +26,7 @@ void	sort_array(t_main_struct *main_struct, t_list *start_list)
 		i++;
 	}
 	for (int i = 0; i < main_struct->size; i++) {     
-        printf("%lld\n ", main_struct->mas[i]);    
+        printf("%lld\n", main_struct->mas[i]);    
     }
 	i = 0;
 	j = 0;
@@ -38,7 +38,7 @@ void	sort_array(t_main_struct *main_struct, t_list *start_list)
 			if (start_list->number == main_struct->mas[i])
 			{
 				start_list->index = i;
-				printf("{P%d %d}\n", start_list->number, start_list->index);
+				// printf("number %4d have index %4d\n", start_list->number, start_list->index);
 				break ;
 			}
 			i++;

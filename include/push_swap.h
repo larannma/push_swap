@@ -17,5 +17,6 @@ int		check_dup(long long int *mas, int size);
 int		check_argv(char *str);
 void	ft_error(char *message);
 void	sort_array(t_main_struct *main_struct, t_list *start_list);
+int		sorted_or_not(t_main_struct *main_struct);
 
 #endif

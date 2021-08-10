@@ -41,7 +41,7 @@ void	print_list(t_list *head)
 int	main(int argc, char **argv)
 {
 	t_main_struct	main_struct;
-	// int	a = 0;
+	t_list *start_list;
 
 	if (argc == 2)
 		if_one_argument(&main_struct, argv[1]);
@@ -51,7 +51,8 @@ int	main(int argc, char **argv)
 		init(&main_struct, argc);
 		check_argument(&main_struct, argv, argc, 1);
 	}
-	t_list *start_list;
+	if (sorted_or_not(&main_struct) == 1)
+		ft_error("Array is sorted\n");
 	convert_to_list(&main_struct, &start_list);
 	sort_array(&main_struct, start_list);
 	// print_list(start_list);
