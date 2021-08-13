@@ -25,9 +25,9 @@ void	sort_array(t_main_struct *main_struct, t_list *start_list)
 		}
 		i++;
 	}
-	for (int i = 0; i < main_struct->size; i++) {     
-        printf("%lld\n", main_struct->mas[i]);    
-    }
+	// for (int i = 0; i < main_struct->size; i++) {     
+    //     printf("%lld\n", main_struct->mas[i]);    
+    // }
 	i = 0;
 	j = 0;
 	while (start_list)

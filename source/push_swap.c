@@ -1,5 +1,4 @@
 #include "../include/push_swap.h"
-#include "../libs/libft/libft.h"
 
 void	if_one_argument(t_main_struct *main_struct, char *argv)
 {
@@ -29,12 +28,15 @@ void	convert_to_list(t_main_struct *main_struct, t_list **start_list)
 		i++;
 	}
 }
-void	print_list(t_list *head)
+void	print_list(t_stack *head)
 {
-	while(head != NULL)
+	t_list	*tmp = head->begin;
+
+	printf("print stack %c\n", head->name);
+	while (tmp)
 	{
-		printf("number: %d\n || index: %d\n", head->number, head->index);
-		head = head->next;
+		printf("number %4d has index %4d\n", tmp->number, tmp->index);
+		tmp = tmp->next;
 	}
 }
 
@@ -42,6 +44,8 @@ int	main(int argc, char **argv)
 {
 	t_main_struct	main_struct;
 	t_list *start_list;
+	t_stack stack_a;
+	t_stack stack_b;
 
 	if (argc == 2)
 		if_one_argument(&main_struct, argv[1]);
@@ -55,5 +59,14 @@ int	main(int argc, char **argv)
 		ft_error("Array is sorted\n");
 	convert_to_list(&main_struct, &start_list);
 	sort_array(&main_struct, start_list);
-	// print_list(start_list);
+	init_stack(start_list, &stack_a, &stack_b, main_struct.size);
+	
+	// print_list(&stack_a);
+	// swap(&stack_a, 1);
+	// print_list(&stack_a);
+	// push(&stack_a, &stack_b);
+	// print_list(&stack_b);
+	// printf("hueta\n");
+	rotate(&stack_a);
+	// print_list(&stack_a);
 }

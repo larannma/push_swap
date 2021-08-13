@@ -99,7 +99,7 @@ int	sorted_or_not(t_main_struct *main_struct)
 	{
 		if (main_struct->mas[i] < main_struct->mas[i + 1])
 		{
-			printf("number i: %lld || number j: %lld\n", main_struct->mas[i], main_struct->mas[i + 1]);
+			//printf("number i: %lld || number j: %lld\n", main_struct->mas[i], main_struct->mas[i + 1]);
 			i++;
 		}
 		else
