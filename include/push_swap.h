@@ -32,5 +32,6 @@ void	ss_swap(t_stack *stack_a, t_stack *stack_b);
 void	push(t_stack *src, t_stack *dst);
 void    rotate(t_stack *stack, int flag);
 void	print_list(t_stack *head);
+void	reverse_rotate(t_stack *stack, int flag);
 
 #endif

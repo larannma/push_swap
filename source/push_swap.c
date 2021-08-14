@@ -60,13 +60,4 @@ int	main(int argc, char **argv)
 	convert_to_list(&main_struct, &start_list);
 	sort_array(&main_struct, start_list);
 	init_stack(start_list, &stack_a, &stack_b, main_struct.size);
-	
-	// print_list(&stack_a);
-	// swap(&stack_a, 1);
-	// print_list(&stack_a);
-	// push(&stack_a, &stack_b);
-	// print_list(&stack_b);
-	// printf("hueta\n");
-	rotate(&stack_a);
-	// print_list(&stack_a);
 }
