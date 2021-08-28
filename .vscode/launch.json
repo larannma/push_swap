@@ -5,17 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "gcc - Build and debug active file",
+            "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": ["14 15 16 17 18"],
-            "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "program": "${workspaceFolder}/push_swap",
+            "args": ["8", "4", "1", "5", "9", "6"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "C/C++: gcc build active file"
+            "MIMode": "lldb"
         }
     ]
 }

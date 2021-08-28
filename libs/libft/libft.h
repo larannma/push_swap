@@ -11,6 +11,7 @@ typedef struct s_list
 	void			*content;
 	int number;
 	int index;
+	int	count_true;
 	struct s_list	*next;
 }					t_list;
 

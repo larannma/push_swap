@@ -35,7 +35,7 @@ void	print_list(t_stack *head)
 	printf("print stack %c\n", head->name);
 	while (tmp)
 	{
-		printf("number %4d has index %4d\n", tmp->number, tmp->index);
+		printf("number %4d has index %4d and has count_true %d\n", tmp->number, tmp->index, tmp->count_true);
 		tmp = tmp->next;
 	}
 }
@@ -60,4 +60,5 @@ int	main(int argc, char **argv)
 	convert_to_list(&main_struct, &start_list);
 	sort_array(&main_struct, start_list);
 	init_stack(start_list, &stack_a, &stack_b, main_struct.size);
+	sort_stack(&stack_a, &stack_b);
 }

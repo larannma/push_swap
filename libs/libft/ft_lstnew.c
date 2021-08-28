@@ -9,6 +9,7 @@ t_list	*ft_lstnew(void *content, int number)
 		return (NULL);
 	new->content = content;
 	new->number = number;
+	new->count_true = 0;
 	new->next = NULL;
 	return (new);
 }

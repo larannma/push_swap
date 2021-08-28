@@ -10,5 +10,7 @@ void	push(t_stack *src, t_stack *dst)
 	src->begin = src_begin_old->next;
 	dst->begin = src_begin_old;
 	(dst->begin)->next = dst_begin_old;
+	src->size--;
+	dst->size++;
 	printf("p%c\n", dst->name);
 }
