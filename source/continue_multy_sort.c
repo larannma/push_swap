@@ -56,6 +56,4 @@ void	transfer_to_b(t_stack *stack_a, t_stack *stack_b)
 		else
 			rotate(stack_a, 1);
 	}
-	print_list(stack_a);
-	print_list(stack_b);
 }
