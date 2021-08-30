@@ -12,6 +12,8 @@ typedef struct s_list
 	int number;
 	int index;
 	int	count_true;
+	int	count_cmds;
+	int	region;
 	struct s_list	*next;
 }					t_list;
 

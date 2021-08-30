@@ -98,7 +98,7 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 	push(stack_a, stack_b);
 	sort_four(stack_a, stack_b);
 	push(stack_b, stack_a);
-	print_list(stack_a);
+	// print_list(stack_a);
 }
 
 void	sort_stack(t_stack *stack_a, t_stack *stack_b)

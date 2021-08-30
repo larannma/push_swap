@@ -94,5 +94,7 @@ void	multy_sort(t_stack *stack_a, t_stack *stack_b)
 	foo_max_count(stack_a);
 	transfer_to_b(stack_a, stack_b);
 	count_cmds(stack_b);
+	count_cmds(stack_a);
+	cmds_amount(stack_a, stack_b);
 	//print_list(stack_b);
 }

@@ -41,7 +41,7 @@ void	transfer_to_b(t_stack *stack_a, t_stack *stack_b)
 
 	(void)stack_b;
 	count_zero = ft_count_zero(stack_a);
-	print_list(stack_a);
+	// print_list(stack_a);
 	while (count_zero)
 	{
 		if (stack_a->begin->count_true == 0)

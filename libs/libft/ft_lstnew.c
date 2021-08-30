@@ -10,6 +10,8 @@ t_list	*ft_lstnew(void *content, int number)
 	new->content = content;
 	new->number = number;
 	new->count_true = 0;
+	new->count_cmds = 0;
+	new->region = 0;
 	new->next = NULL;
 	return (new);
 }
