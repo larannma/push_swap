@@ -21,7 +21,6 @@ void	get_index(t_stack *stack)
 		tmp = tmp->next;
 		index--;
 	}
-	// print_list(stack);
 }
 
 void	count_cmds(t_stack *stack)

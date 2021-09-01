@@ -38,5 +38,9 @@ void	multy_sort(t_stack *stack_a, t_stack *stack_b);
 void	transfer_to_b(t_stack *stack_a, t_stack *stack_b);
 void	count_cmds(t_stack *stack);
 void	cmds_amount(t_stack *stack_a, t_stack *stack_b);
+void	rr_rotate(t_stack *stack_a, t_stack *stack_b);
+void	rr_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+void	find_region(t_stack *stack);
+t_list	*compare_difference(t_stack *stack_a, t_list *lst);
 
 #endif

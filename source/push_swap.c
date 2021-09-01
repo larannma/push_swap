@@ -35,7 +35,7 @@ void	print_list(t_stack *head)
 	printf("print stack %c\n", head->name);
 	while (tmp)
 	{
-		printf("number %4d has index %4d and has count_true %4d | region: %d\n", tmp->number, tmp->index, tmp->count_true, tmp->region);
+		printf("number %4d has index %4d and has count_true %4d | region: %d | count_cmds: %d\n", tmp->number, tmp->index, tmp->count_true, tmp->region, tmp->count_cmds);
 		tmp = tmp->next;
 	}
 }
