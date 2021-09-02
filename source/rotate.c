@@ -1,36 +1,35 @@
 #include "../include/push_swap.h"
 
-t_list     *get_pointer(t_stack *stack1, int flag)
+t_list	*get_pointer(t_stack *stack1, int flag)
 {
-    t_list  *stack;
+	t_list	*stack;
 
-    stack = stack1->begin;
-
+	stack = stack1->begin;
 	if (flag)
 	{
 		while (stack->next->next)
 		{
 			stack = stack->next;
 		}
-		return stack;
-    }
-    while (stack->next)
-    {
-        stack = stack->next;
-    }
-    return stack;
+		return (stack);
+	}
+	while (stack->next)
+	{
+		stack = stack->next;
+	}
+	return (stack);
 }
 
-void    rotate(t_stack *stack, int flag)
+void	rotate(t_stack *stack, int flag)
 {
-    t_list  *old_second;
-    t_list  *tmp;
+	t_list	*old_second;
+	t_list	*tmp;
 
-    old_second = stack->begin->next;
-    tmp = get_pointer(stack, 0);
-    tmp->next = stack->begin;
-    tmp->next->next = NULL;
-    stack->begin = old_second;
+	old_second = stack->begin->next;
+	tmp = get_pointer(stack, 0);
+	tmp->next = stack->begin;
+	tmp->next->next = NULL;
+	stack->begin = old_second;
 	if (flag)
 		printf("r%c\n", stack->name);
 }
@@ -47,8 +46,6 @@ void	reverse_rotate(t_stack *stack, int flag)
 	t_list	*old_begin;
 	t_list	*old_end;
 	t_list	*new_end;
-
-
 
 	old_end = get_pointer(stack, 0);
 	new_end = get_pointer(stack, 1);
