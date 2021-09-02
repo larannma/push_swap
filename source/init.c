@@ -1,11 +1,11 @@
 #include "../include/push_swap.h"
 #include "../libs/libft/libft.h"
 
-void	init(t_main_struct *main_struct, int argc)
+void    init(t_main_struct *main_struct, int argc)
 {
-	main_struct->mas = malloc((argc - 1) * sizeof(long long int));
-	if (main_struct->mas == NULL)
-		ft_error("Couldn't allocate enought space\n");
+    main_struct->mas = malloc((argc - 1) * sizeof(long long int));
+    if (main_struct->mas == NULL)
+        ft_error("Couldn't allocate enought space\n");
 }
 
 int	check_dup(long long int *mas, int size)
@@ -16,7 +16,7 @@ int	check_dup(long long int *mas, int size)
 	i = 0;
 	j = 0;
 	while (i < size - 1)
-	{
+	{ 
 		j = i + 1;
 		while (j < size)
 		{
@@ -41,27 +41,26 @@ int	check_argv(char *str)
 		if ((str[i] == '-' || str[i] == '+') && i == 0)
 		{
 			i++;
-			continue ;
+			continue;
 		}
-		if (ft_isdigit(str[i]))
+		if(ft_isdigit(str[i]))
 		{
 			i++;
-			continue ;
+			continue;
 		}
 		return (0);
 	}
 	return (1);
 }
 
-int	check_max_min_int(t_main_struct *main_struct, int a)
+int		check_max_min_int(t_main_struct *main_struct, int a)
 {
 	int	i;
 
 	i = 0;
 	while (i < a)
 	{
-		if (main_struct->mas[i] < -2147483648 || \
-			main_struct->mas[i] > 2147483647)
+		if (main_struct->mas[i] < -2147483648 || main_struct->mas[i] > 2147483647)
 			return (0);
 		i++;
 	}
@@ -70,7 +69,7 @@ int	check_max_min_int(t_main_struct *main_struct, int a)
 
 void	check_argument(t_main_struct *main_struct, char **argv, int argc, int i)
 {
-	int	k;
+	int k;
 
 	k = 0;
 	if (i == 0)
@@ -89,4 +88,22 @@ void	check_argument(t_main_struct *main_struct, char **argv, int argc, int i)
 		ft_error("You have duplicate numbers\n");
 	if (!check_max_min_int(main_struct, argc - 1))
 		ft_error("The number is too big");
+}
+
+int	sorted_or_not(t_main_struct *main_struct)
+{
+	int	i;
+
+	i = 0;
+	while (i < main_struct->size - 1)
+	{
+		if (main_struct->mas[i] < main_struct->mas[i + 1])
+		{
+			//printf("number i: %lld || number j: %lld\n", main_struct->mas[i], main_struct->mas[i + 1]);
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (1);
 }

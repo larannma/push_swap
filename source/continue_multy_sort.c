@@ -1,9 +1,10 @@
 #include "../include/push_swap.h"
 
-int	ft_count_zero(t_stack *stack_a)
+int		ft_count_zero(t_stack *stack_a)
 {
 	t_list	*tmp;
-	int		zero;
+	int	zero;
+
 
 	tmp = stack_a->begin;
 	zero = 0;
@@ -16,18 +17,18 @@ int	ft_count_zero(t_stack *stack_a)
 	return (zero);
 }
 
-int	ft_find_position_zero(t_stack *stack_a)
+int		ft_find_position_zero(t_stack *stack_a)
 {	
 	t_list	*tmp;
-	int		pos;
+	int	pos;
 
 	tmp = stack_a->begin;
 	pos = 1;
 	while (tmp)
 	{
-		if (tmp->count_true == 0)
+		if (tmp->count_true == 0) 
 			break ;
-		tmp = tmp->next;
+			tmp = tmp->next;
 		pos++;
 	}
 	return (pos);
@@ -40,6 +41,7 @@ void	transfer_to_b(t_stack *stack_a, t_stack *stack_b)
 
 	(void)stack_b;
 	count_zero = ft_count_zero(stack_a);
+	// print_list(stack_a);
 	while (count_zero)
 	{
 		if (stack_a->begin->count_true == 0)
