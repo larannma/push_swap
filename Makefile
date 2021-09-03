@@ -1,5 +1,7 @@
 NAME		=	push_swap
 
+HEAD		= ./include/push_swap.h
+
 SRCS_FILES	= 	${shell find ./source -name "*.c"}
 
 UTILS_FILES	= 	${shell find ./utils -name "*.c"}
@@ -21,10 +23,10 @@ RM			=	rm -f
 
 all:		$(NAME)
 
-%.o:		%.c
+%.o:		%.c $(HEAD)
 			$(CC) $(CFLAGS) $(INCLUDE) -c -g $< -o $@
 		
-$(NAME):	$(OBJS)
+$(NAME):	$(OBJS) $(HEAD)
 			$(MAKE) -C $(dir $(LIB))
 			$(CC) $(INCLUDE) $(LIB) -o $(NAME) $(OBJS)
 

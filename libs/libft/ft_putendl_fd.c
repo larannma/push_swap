@@ -12,5 +12,4 @@ void	ft_putendl_fd(char *s, int fd)
 		ft_putchar_fd(s[i], fd);
 		i++;
 	}
-	write(fd, "\n", 1);
 }

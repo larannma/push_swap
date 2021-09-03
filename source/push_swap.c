@@ -2,7 +2,7 @@
 
 void	if_one_argument(t_main_struct *main_struct, char *argv)
 {
-	int i;
+	int		i;
 	char	**line_mas;
 
 	i = 0;
@@ -11,15 +11,14 @@ void	if_one_argument(t_main_struct *main_struct, char *argv)
 		i++;
 	main_struct->size = i;
 	main_struct->mas = malloc((i + 1) * sizeof(long long int));
-    if (main_struct->mas == NULL)
-        ft_error("Couldn't allocate enought space\n");
+	if (main_struct->mas == NULL)
+		ft_error("Error\n");
 	check_argument(main_struct, line_mas, i + 1, 0);
-
 }
 
 void	convert_to_list(t_main_struct *main_struct, t_list **start_list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < main_struct->size)
@@ -28,25 +27,16 @@ void	convert_to_list(t_main_struct *main_struct, t_list **start_list)
 		i++;
 	}
 }
-void	print_list(t_stack *head)
-{
-	t_list	*tmp = head->begin;
-
-	printf("print stack %c\n", head->name);
-	while (tmp)
-	{
-		printf("number %4d has index %4d and has count_true %4d | region: %d | count_cmds: %d\n", tmp->number, tmp->index, tmp->count_true, tmp->region, tmp->count_cmds);
-		tmp = tmp->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
 	t_main_struct	main_struct;
-	t_list *start_list;
-	t_stack stack_a;
-	t_stack stack_b;
+	t_list			*start_list;
+	t_stack			stack_a;
+	t_stack			stack_b;
 
+	if (argc == 1)
+		exit (1);
 	if (argc == 2)
 		if_one_argument(&main_struct, argv[1]);
 	else
@@ -56,7 +46,7 @@ int	main(int argc, char **argv)
 		check_argument(&main_struct, argv, argc, 1);
 	}
 	if (sorted_or_not(&main_struct) == 1)
-		ft_error("Array is sorted\n");
+		exit (1);
 	convert_to_list(&main_struct, &start_list);
 	sort_array(&main_struct, start_list);
 	init_stack(start_list, &stack_a, &stack_b, main_struct.size);

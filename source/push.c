@@ -12,5 +12,7 @@ void	push(t_stack *src, t_stack *dst)
 	(dst->begin)->next = dst_begin_old;
 	src->size--;
 	dst->size++;
-	printf("p%c\n", dst->name);
+	ft_putstr_fd("p", 1);
+	write(1, &dst->name, 1);
+	write(1, "\n", 1);
 }
